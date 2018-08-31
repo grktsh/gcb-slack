@@ -2,7 +2,7 @@ const IncomingWebhook = require('@slack/client').IncomingWebhook;
 
 const webhook = new IncomingWebhook(process.env.SLACK_WEBHOOK_URL);
 
-module.exports.subscribe = (event, callback) => {
+module.exports.gcbSlack = (event, callback) => {
   const build = eventToBuild(event.data.data);
 
   // Skip if the current status is not in the status list.
