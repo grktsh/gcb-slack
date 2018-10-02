@@ -45,7 +45,7 @@ const getStatusColor = status => {
 };
 
 const getRevision = source => {
-  if (!source.repoSource) {
+  if (!source || !source.repoSource) {
     return null;
   }
   const { branchName, tagName, commitSha } = source.repoSource;
