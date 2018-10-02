@@ -14,7 +14,9 @@ module.exports.gcbSlack = (event, callback) => {
   }
 
   const message = createSlackMessage(build);
-  webhook.send(message, callback);
+  if (message) {
+    webhook.send(message, callback);
+  }
 };
 
 const eventToBuild = data => {
@@ -24,6 +26,9 @@ const eventToBuild = data => {
 const createSlackMessage = build => {
   const { status, projectId, source, logUrl } = build;
   const revision = getRevision(source);
+  if (!revision) {
+    return null;
+  }
   return {
     attachments: [
       {
