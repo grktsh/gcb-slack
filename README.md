@@ -1,4 +1,6 @@
-# gcb-slack
+# gcb-tools
+
+## slack
 
 > Slack integration for Google Cloud Build, using Google Cloud Functions
 

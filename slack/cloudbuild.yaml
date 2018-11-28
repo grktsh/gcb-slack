@@ -1,0 +1,11 @@
+steps:
+- name: gcr.io/cloud-builders/gcloud
+  args:
+  - beta
+  - functions
+  - deploy
+  - gcbToolsSlack
+  - --trigger-topic=cloud-builds
+  - --runtime=nodejs8
+  - --update-env-vars=SLACK_WEBHOOK_URL=${_SLACK_WEBHOOK_URL},TRIGGER_IDS=${_TRIGGER_IDS}
+  dir: slack
