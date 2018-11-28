@@ -1,0 +1,15 @@
+steps:
+- name: gcr.io/cloud-builders/gcloud
+  args:
+  - beta
+  - functions
+  - deploy
+  - gcbToolsBitbucket
+  - --trigger-topic=cloud-builds
+  - --runtime=nodejs8
+  - --update-env-vars=BUILD_TRIGGER_IDS=${_BUILD_TRIGGER_IDS}
+  - --update-env-vars=BITBUCKET_APP_USERNAME=${_BITBUCKET_APP_USERNAME}
+  - --update-env-vars=BITBUCKET_APP_PASSWORD=${_BITBUCKET_APP_PASSWORD}
+  - --update-env-vars=BITBUCKET_USERNAME=${_BITBUCKET_USERNAME}
+  - --update-env-vars=BITBUCKET_REPO_SLUG=${_BITBUCKET_REPO_SLUG}
+  dir: bitbucket
