@@ -7,5 +7,6 @@ steps:
   - gcbToolsSlack
   - --trigger-topic=cloud-builds
   - --runtime=nodejs8
-  - --update-env-vars=SLACK_WEBHOOK_URL=${_SLACK_WEBHOOK_URL},BUILD_TRIGGER_IDS=${_BUILD_TRIGGER_IDS}
+  - --update-env-vars=BUILD_TRIGGER_IDS=${_BUILD_TRIGGER_IDS}
+  - --update-env-vars=SLACK_WEBHOOK_URL=${_SLACK_WEBHOOK_URL}
   dir: slack
