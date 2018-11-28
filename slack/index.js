@@ -1,8 +1,9 @@
 const IncomingWebhook = require('@slack/client').IncomingWebhook;
 
 const webhook = new IncomingWebhook(process.env.SLACK_WEBHOOK_URL);
-const triggerIds = process.env.TRIGGER_IDS
-  ? process.env.TRIGGER_IDS.split(',')
+
+const buildTriggerIds = process.env.BUILD_TRIGGER_IDS
+  ? process.env.BUILD_TRIGGER_IDS.split(',')
   : [];
 
 const statuses = [
@@ -17,7 +18,10 @@ const statuses = [
 exports.gcbToolsSlack = (data, context) => {
   const build = parseBase64EncodedJSON(data.data);
 
-  if (triggerIds.length && triggerIds.indexOf(build.buildTriggerId) === -1) {
+  if (
+    buildTriggerIds.length &&
+    buildTriggerIds.indexOf(build.buildTriggerId) === -1
+  ) {
     return;
   }
 
