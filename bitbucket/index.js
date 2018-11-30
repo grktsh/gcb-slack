@@ -99,11 +99,7 @@ const postBuildStatus = (path, buildStatus) => {
     auth: BITBUCKET_APP_USERNAME + ':' + BITBUCKET_APP_PASSWORD
   };
   const req = https.request(options, res => {
-    console.log('Status:', res.statusCode);
     res.setEncoding('utf8');
-    res.on('data', chunk => {
-      console.log('Body:', chunk);
-    });
   });
   req.on('error', e => {
     console.error('Error:', e);
