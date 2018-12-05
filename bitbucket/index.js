@@ -6,7 +6,7 @@ const BITBUCKET_USERNAME = process.env.BITBUCKET_USERNAME;
 const BITBUCKET_REPO_SLUG = process.env.BITBUCKET_REPO_SLUG;
 
 const buildTriggerIds = process.env.BUILD_TRIGGER_IDS
-  ? process.env.BUILD_TRIGGER_IDS.split(',')
+  ? process.env.BUILD_TRIGGER_IDS.split('|')
   : [];
 
 exports.gcbToolsBitbucket = (data, context) => {

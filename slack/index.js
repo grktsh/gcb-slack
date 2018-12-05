@@ -3,7 +3,7 @@ const IncomingWebhook = require('@slack/client').IncomingWebhook;
 const webhook = new IncomingWebhook(process.env.SLACK_WEBHOOK_URL);
 
 const buildTriggerIds = process.env.BUILD_TRIGGER_IDS
-  ? process.env.BUILD_TRIGGER_IDS.split(',')
+  ? process.env.BUILD_TRIGGER_IDS.split('|')
   : [];
 
 const statuses = [
