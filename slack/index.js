@@ -79,7 +79,7 @@ const getLinks = results => {
     if (output) {
       try {
         const link = parseBase64EncodedJSON(output)['gcb-tools.link'];
-        if (link) {
+        if (link && link.url) {
           links.push(link);
         }
       } catch (e) {
