@@ -3,24 +3,5 @@
   "version": "1.0.0",
   "description": "Bitbucket integration for Google Cloud Build, using Google Cloud Functions",
   "main": "index.js",
-  "private": true,
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "index.js": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "prettier": {
-    "singleQuote": true
-  },
-  "devDependencies": {
-    "husky": "^1.3.1",
-    "lint-staged": "^8.1.4",
-    "prettier": "^1.14.2"
-  }
+  "private": true
 }
