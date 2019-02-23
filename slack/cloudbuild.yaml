@@ -8,4 +8,9 @@ steps:
   - --runtime=nodejs8
   - --update-env-vars=BUILD_TRIGGER_IDS=${_BUILD_TRIGGER_IDS}
   - --update-env-vars=SLACK_WEBHOOK_URL=${_SLACK_WEBHOOK_URL}
+  - --update-env-vars=EMOJI_WORKING=${_EMOJI_WORKING}
+  - --update-env-vars=EMOJI_SUCCESS=${_EMOJI_SUCCESS}
+  - --update-env-vars=EMOJI_FAILURE=${_EMOJI_FAILURE}
+  - --update-env-vars=EMOJI_INTERNAL_ERROR=${_EMOJI_INTERNAL_ERROR}
+  - --update-env-vars=EMOJI_TIMEOUT=${_EMOJI_TIMEOUT}
   dir: slack
