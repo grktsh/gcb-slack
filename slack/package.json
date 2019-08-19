@@ -5,6 +5,6 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
-    "@slack/client": "^4.4.0"
+    "@slack/webhook": "^5.0.1"
   }
 }
