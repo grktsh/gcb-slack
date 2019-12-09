@@ -43,7 +43,7 @@ const createSlackMessage = build => {
     const elapsedTime = getElapsedTime(timing.BUILD);
     parts.push(elapsedTime);
   }
-  if (results) {
+  if (results && results.buildStepOutputs) {
     for (const link of getLinks(results)) {
       parts.push(`<${link.url}|${link.name}>`);
     }
